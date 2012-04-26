@@ -3,7 +3,7 @@ This is a system for making form letters with more variety, realism, and a human
 
 ##### Simple Substitutions from YAML
 Given:
-a) an input file template, and 
+a) an input file template, and  
 b) a yaml file with the substitutions you want to make into the lette template,
 				
 output a form letter with substitutions from the yaml file. The YAML entries can be arrays, in which case it makes the substitution with a randomly-chosen member of the array.
@@ -17,30 +17,33 @@ somewhere in your YAML file.
 ##### Substitutions based on a object's public methods and instance variables
 Given:
 a) an input file template,  
-b) an object with public methods and/or instance variables, and 
+b) an object with public methods and/or instance variables, and  
 c) an array of the methods you want to substitute into the form letter, 
 
 output a form letter that replaces every occurrence of e.g. #method in the form letter with the result of calling object.method.  For example, if you have the class:
-```class DummyClass
-	  attr_reader :a
-	  def initialize
-	    @a = "asdf"
-	  end
-	  def test
-	    "jkl;"
-	  end
-	end
+```ruby
+class DummyClass
+  attr_reader :a
+  def initialize
+    @a = "asdf"
+  end
+  def test
+    "jkl;"
+  end
+end
 ```
 
 Then the following code:
 
-```dc = DummyClass.new
+```ruby
+dc = DummyClass.new
 template = "foo #a bar #test"
 method_list = [:a, :test]
 ```
 calling
 
-```obj_sub(dc,method_list)
+```ruby
+obj_sub(dc,method_list)
 ```
 on a form letter using the template above will yield "foo asdf bar jkl;".
 This project will eventually be extended to allow for randomly ordering the sections of the letter. 
