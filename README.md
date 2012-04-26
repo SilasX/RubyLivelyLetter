@@ -47,7 +47,7 @@ obj_sub(dc,method_list)
 ```
 on a form letter using the template above will yield 
 
-    "foo asdf bar jkl;".
+    foo asdf bar jkl;
 
 This project will eventually be extended to allow for randomly ordering the sections of the letter. 
 
