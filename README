@@ -1,0 +1,13 @@
+This is a system for making form letters with more variety, realism, and a human touch.  As it stands, it takes a) an input file template, and b) a yaml file with the substitutions you want to make into the letter, and generates your form letter.  The YAML entries can be arrays, in which case it makes the substitution with a randomly-chosen member of the array.
+
+In your input form letter template, place a # before every variable you want to substitute from the yaml, and then ensure it is replaced with a (#-free) entry with the same key in your YAML file. For example, if you have #name, in your form letter, make sure you have a line like 
+
+    name: Bobby
+
+somewhere in your YAML file.
+
+This project will eventually be extended to allow for randomly ordering the sections of the letter and calls to dynamic/database variables you have defined.
+
+Don't use this for spam.  Seriously -- not cool.
+
+Code as hosted on Github is released under the MIT license.  You know where to find it. 
