@@ -14,11 +14,11 @@ describe FormLetter do
       @fl2.object_subs(@dc1,[:a,:test]).should == File.open(input + 'ExpOutput2.txt').read
     end
 
-    it "should allow an argument list instead of an array" do
-      @dc3 = DummyClass.new
-      @fl4 = FormLetter.new(input + 'Template2.txt')
-      @fl4.object_subs(@dc1,:a,:test).should == File.open(input + 'ExpOutput2.txt').read
-    end
+    #it "should allow an argument list instead of an array" do
+    #  @dc3 = DummyClass.new
+    #  @fl4 = FormLetter.new(input + 'Template2.txt')
+    #  @fl4.object_subs(@dc1,:a,:test).should == File.open(input + 'ExpOutput2.txt').read
+    #end
 
     it "should make substitutions based on a HASH mapping object's methods to template keyword" do
       @dc2 = DummyClass.new

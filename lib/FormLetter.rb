@@ -27,12 +27,10 @@ class FormLetter
   # If you want to substitute a string other than M, use a hash (rather than an
   # array), mapping methods to the string in the template it should replace
   # (methods must be given as symbols or strings)
-  def object_subs object, *method_list
+  def object_subs object, method_list
     letter = @output_letter
-    puts "object_subs received a/n #{method_list.class}, namely #{method_list}"
-    flat_method_list = method_list.flatten if method_list[0].class == Array
-    flat_method_list = method_list[0] if method_list[0].class == Hash
-    case flat_method_list
+    #puts "object_subs received a/n #{method_list.class}, namely #{method_list}"
+    case method_list
     when Array
       method_list.each do |method|
         letter.gsub!(@subs_flag + method.to_s, object.send(method.intern) )
