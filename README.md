@@ -4,7 +4,7 @@ This is a system for making form letters with more variety, realism, and a human
 ##### Simple Substitutions from YAML
 Given:
 a) an input file template, and  
-b) a yaml file with the substitutions you want to make into the lette template,
+b) a yaml file with the substitutions you want to make into the letter template,
 				
 output a form letter with substitutions from the yaml file. The YAML entries can be arrays, in which case it makes the substitution with a randomly-chosen member of the array.
 
@@ -28,24 +28,25 @@ class DummyClass
     @a = "asdf"
   end
   def test
-    "jkl;"
+    "fdsa"
   end
 end
 ```
 
-Then the following code:
+And declare the variables
 
 ```ruby
+fl = FormLetter.new
 dc = DummyClass.new
 template = "foo #a bar #test"
 method_list = [:a, :test]
 ```
-calling
+then calling
 
 ```ruby
-obj_sub(dc,method_list)
+fl.obj_sub(dc,method_list)
 ```
-on a form letter using the template above will yield 
+will yield 
 
     foo asdf bar jkl;
 
