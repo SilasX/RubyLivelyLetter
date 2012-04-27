@@ -1,5 +1,5 @@
 #### LivelyLetter
-This is a system for making form letters with more variety, realism, and a human touch.  So for, it can do the following things:
+This is a system for making form letters with more variety, realism, and a human touch.  So far, it can do the following things:
 
 ##### Simple Substitutions from YAML
 Given:
@@ -48,7 +48,7 @@ fl.obj_sub(dc,method_list)
 ```
 will yield 
 
-    foo asdf bar jkl;
+    foo asdf bar fdsa
 
 This project will eventually be extended to allow for randomly ordering the sections of the letter. 
 
