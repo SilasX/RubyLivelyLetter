@@ -8,7 +8,7 @@ b) a yaml file with the substitutions you want to make into the letter template,
 				
 output a form letter with substitutions from the yaml file. The YAML entries can be arrays, in which case it makes the substitution with a randomly-chosen member of the array.
 
-In your input form letter template, place a # before every variable you want to substitute from the yaml, and then ensure it is replaced with a (#-free) entry with the same key in your YAML file. For example, if you have #name, in your form letter, make sure you have a line like 
+In your input form letter template, place a # before every variable you want to substitute from the yaml, and then ensure it corresponds to a (#-free) entry with the same key in your YAML file. For example, if you have #name, in your form letter, make sure you have a line like 
 
     name: Bobby
 
