@@ -23,7 +23,7 @@ describe FormLetter do
     it "should make substitutions based on a HASH mapping object's methods to template keyword" do
       @dc2 = DummyClass.new
       @fl3 = FormLetter.new(input + 'Template3.txt')
-      @fl3.object_subs(@dc2,{:a => "firstfield", :test => "secondfield"}).should == File.open(input + 'ExpOutput2.txt').read
+      @fl3.object_subs(@dc2,{"firstfield" => :a, "secondfield" => :test}).should == File.open(input + 'ExpOutput2.txt').read
     end
     
   end

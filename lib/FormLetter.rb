@@ -36,7 +36,7 @@ class FormLetter
         letter.gsub!(@subs_flag + method.to_s, object.send(method.intern) )
       end
     when Hash
-      method_list.each do |method, template_string|
+      method_list.each do |template_string, method|
         letter.gsub!(@subs_flag + template_string.to_s, object.send(method.intern) )
       end
     else
